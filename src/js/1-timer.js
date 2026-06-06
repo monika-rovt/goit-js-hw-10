@@ -33,7 +33,7 @@ function disableControls() {
 }
 
 function enableControls() {
-  refs.startBtn.disabled = false;
+  refs.startBtn.disabled = true;
   refs.input.disabled = false;
 }
 
@@ -63,8 +63,7 @@ flatpickr(refs.input, options);
 
 refs.startBtn.addEventListener("click", () => {
    clearInterval(timerId);
-
-disableControls();
+   disableControls();
 
   timerId = setInterval(() => {
     const currentTime = new Date();
