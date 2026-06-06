@@ -1,0 +1,81 @@
+.timer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #333;
+}
+input[type="datetime-local"] {
+  border: 2px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 272px;
+  height: 40px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+input[type="datetime-local"]:focus {
+  border-color: #007bff;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #6c8cff;
+}
+
+button:disabled {
+  background-color: #cfcfcf;;
+  cursor: not-allowed;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  background-color: #f0f4f8;
+  padding: 15px 20px;
+  border-radius: 8px;
+  min-width: 70px;
+}
+
+.field .value {
+font-weight: 400;
+font-size: 40px;
+line-height: 1.20;
+letter-spacing: 0.04em;
+color: #2e2f42;
+display: block;
+}
+
+.field .label {
+  font-size: 14px;
+  color: #6c757d;
+  text-transform: uppercase;
+  margin-top: 5px;
+  display: block;
+}
