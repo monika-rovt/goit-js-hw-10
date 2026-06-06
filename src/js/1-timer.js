@@ -27,6 +27,16 @@ let timerId = null;
 
 refs.startBtn.disabled = true;
 
+function disableControls() {
+  refs.startBtn.disabled = true;
+  refs.input.disabled = true;
+}
+
+function enableControls() {
+  refs.startBtn.disabled = false;
+  refs.input.disabled = false;
+}
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -37,7 +47,8 @@ const options = {
     const currentDate = new Date();
 
     if (selectedDate <= currentDate) {
-      alert("Please choose a date in the future");
+      iziToast.error({
+        message: "Please choose a date in the future"},);
       refs.startBtn.disabled = true;
       userSelectedDate = null;
       return;
@@ -53,6 +64,8 @@ flatpickr(refs.input, options);
 refs.startBtn.addEventListener("click", () => {
    clearInterval(timerId);
 
+disableControls();
+
   timerId = setInterval(() => {
     const currentTime = new Date();
     const deltaTime = userSelectedDate - currentTime;
@@ -60,7 +73,7 @@ refs.startBtn.addEventListener("click", () => {
 
     if (deltaTime <= 0) {
       clearInterval(timerId);
-      updateTimerDisplay(0, 0, 0, 0);
+      enableControls();
       return;
     }
 
